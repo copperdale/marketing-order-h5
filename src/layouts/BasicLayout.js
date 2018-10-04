@@ -150,8 +150,9 @@ export default class BasicLayout extends React.PureComponent {
     // According to the url parameter to redirect
     // 这里是重定向的,重定向到 url 的 redirect 参数所示地址
     const urlParams = new URL(window.location.href);
-
+    
     const redirect = urlParams.searchParams.get('redirect');
+    
     // Remove the parameters in the url
     if (redirect) {
       urlParams.searchParams.delete('redirect');
@@ -160,7 +161,10 @@ export default class BasicLayout extends React.PureComponent {
       const { routerData } = this.props;
       // get the first authorized route path in routerData
       const authorizedPath = Object.keys(routerData).find(
-        item => check(routerData[item].authority, item) && item !== '/'
+        item => {
+          console.log('###################');
+          return check(routerData[item].authority, item) && item !== '/';
+        }
       );
       return authorizedPath;
     }
@@ -214,6 +218,7 @@ export default class BasicLayout extends React.PureComponent {
     } = this.props;
     const { isMobile: mb } = this.state;
     const baseRedirect = this.getBaseRedirect();
+    console.log(baseRedirect);
     const layout = (
       <Layout>
         <HeaderMenu
@@ -254,7 +259,7 @@ export default class BasicLayout extends React.PureComponent {
                   component={item.component}
                   exact={item.exact}
                   authority={item.authority}
-                  redirectPath="/exception/403"
+                  redirectPath="/login"
                 />
               ))}
               <Redirect exact from="/" to={baseRedirect} />

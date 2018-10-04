@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Link } from 'dva/router';
-import { Checkbox, Alert, Icon } from 'antd';
+import { Link, routerRedux } from 'dva/router';
+import { Alert } from 'antd';
 import Login from 'components/Login';
 import styles from './Login.less';
+import { getToken } from '../../utils/authority';
 
-const { Tab, Shop, UserName, Password, Mobile, Captcha, Submit } = Login;
+const { Shop, UserName, Password, Submit } = Login;
 
 @connect(({ login, loading }) => ({
   login,
   submitting: loading.effects['login/login'],
 }))
 export default class LoginPage extends Component {
+
+  constructor(props) {
+    super(props);
+    if (getToken('token')) {
+      props.dispatch(routerRedux.push('/home'));
+    }
+  }
+
   state = {
     type: 'account',
     autoLogin: true,

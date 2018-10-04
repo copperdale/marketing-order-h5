@@ -58,9 +58,9 @@ export default class SearchResult extends Component {
       },
     }, {
       title: '状态',
-      dataIndex: 'planState',
+      dataIndex: 'enabledFlag',
       render: (text) => {
-        return text === 1 ? '启用' : '禁用'; 
+        return `${text}` === '1' ? '启用' : '禁用'; 
       },
     }, {
       title: '操作',
@@ -70,10 +70,10 @@ export default class SearchResult extends Component {
           <a
             className="primary-blue"
             href="javascript:;"
-            onClick={() => { this.setStatus(record.id, record.planState === 1 ? 2 : 1) }}
+            onClick={() => { this.setStatus(record.id, `${record.enabledFlag}` === '1' ? 2 : 1) }}
           >
             {
-              record.planState !== 1 ? '启用' : '禁用'
+              `${record.enabledFlag}` !== '1' ? '启用' : '禁用'
             }
           </a>
           <Divider type="vertical" />
@@ -89,7 +89,7 @@ export default class SearchResult extends Component {
           </Link>
           <Divider type="vertical" />
           <Popconfirm
-            title="Are you sure delete this task?" 
+            title="确定要删除这条记录吗?" 
             onConfirm={() => {this.deleteCommission(record.id)}}
             okText="删除"
             cancelText="取消"

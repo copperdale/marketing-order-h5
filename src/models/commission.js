@@ -48,7 +48,7 @@ export default {
       const searchResult = yield select(state => state.commission.searchResult);
       searchResult.content.forEach((item) => {
         if (`${item.id}` === `${id}`) {
-          item.planState = status; // eslint-disable-line
+          item.enabledFlag = status; // eslint-disable-line
         }
       });
       yield put({
