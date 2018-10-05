@@ -7,9 +7,16 @@ import { Link } from 'dva/router';
   queryResult: state.product.queryResult,
 }))
 export default class SearchResult extends Component {
-  deleteProduct = (id) => {
-    alert('单品和套餐的删除接口未提供');
+
+  deleteDishShop = (id) => {
+    this.props.dispatch({
+      type: 'product/deleteDishShop',
+      payload: {
+        id,
+      },
+    });
   }
+
   render() {
     const columns = [{
       title: '品项名称',
@@ -60,7 +67,7 @@ export default class SearchResult extends Component {
           <Divider type="vertical" />
           <Popconfirm
             title="确定要删除这条记录吗?"
-            onConfirm={() => { this.deleteProduct(record.id) }}
+            onConfirm={() => { this.deleteDishShop(record.id) }}
             okText="删除"
             cancelText="取消"
           >
@@ -74,8 +81,8 @@ export default class SearchResult extends Component {
       ),
     }];
 
-    let data = this.props.queryResult;
-    data = data;
+    const data = this.props.queryResult;
+    // data = data;
     const pager = {
       pageSize: 10,
       showSizeChanger: true,

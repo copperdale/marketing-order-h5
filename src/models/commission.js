@@ -1,7 +1,7 @@
-import { parse } from 'qs';
+// import { parse } from 'qs';
 import { cloneDeep } from 'lodash/lang';
 import { 
-  queryPlan, deleteCommission, setCommissionStatus
+  queryPlan, deleteCommission, setCommissionStatus,
 } from '../services/commission';
 
 export default {
@@ -9,7 +9,7 @@ export default {
 
   state: {
     queryFormData: {
-      planState: { value: '' },
+      enableFlag: { value: '' },
       planType: { value: '' },
     },
     searchResult: {
@@ -21,7 +21,7 @@ export default {
     *queryPlan(_, { call, put, select }) {
       const queryFormData = yield select(state => state.commission.queryFormData);
       const params = {
-        planState: queryFormData.planState.value,
+        enableFlag: queryFormData.enableFlag.value,
         planType: queryFormData.planType.value,
       };
       const response = yield call(queryPlan, params);
@@ -69,9 +69,9 @@ export default {
     },
   },
   subscriptions: {
-    setup({ history, dispatch }) {
+    setup({ history, dispatch }) { // eslint-disable-line
       // Subscribe history(url) change, trigger `load` action if pathname is `/`
-      return history.listen(({ pathname, search }) => {
+      // return history.listen(({ pathname, search }) => {
         // if (pathname === '/setting' || pathname === '/') {
         //   dispatch({
         //     type: 'setting/getTableArea',
@@ -91,7 +91,7 @@ export default {
         //   }
         // }
         
-      });
+      // });
     },
   },
 };

@@ -60,7 +60,7 @@ class BasicForm extends React.Component {
           {...formItemLayout}
           label="状态"
         >
-          {getFieldDecorator('planState', {
+          {getFieldDecorator('enableFlag', {
             initialValue: '',
             // rules: [{ required: true, message: 'Please input your note!' }],
           })(
@@ -93,7 +93,7 @@ const QueryForm = Form.create({
     })
   },
   mapPropsToFields(props) {
-    const fields = 'planType planState'.split(' ');
+    const fields = 'planType enableFlag'.split(' ');
     const result = {};
     fields.forEach((key) => {
       result[key] = Form.createFormField({

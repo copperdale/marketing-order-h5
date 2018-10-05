@@ -33,15 +33,23 @@ export default class LoginPage extends Component {
   handleSubmit = (err, values) => {
     const { type } = this.state;
     const { dispatch } = this.props;
-    if (true) {
-      dispatch({
-        type: 'login/login',
-        payload: {
-          ...values,
-          type,
-        },
-      });
-    }
+
+    dispatch({
+      type: 'login/login',
+      payload: {
+        ...values,
+        type,
+      },
+    });
+    // if (!err) {
+    //   dispatch({
+    //     type: 'login/login',
+    //     payload: {
+    //       ...values,
+    //       type,
+    //     },
+    //   });
+    // }
   };
 
   changeAutoLogin = e => {
@@ -55,8 +63,8 @@ export default class LoginPage extends Component {
   };
 
   render() {
-    const { login, submitting } = this.props;
-    const { type, autoLogin } = this.state;
+    const { login, submitting } = this.props; // eslint-disable-line
+    const { type, autoLogin } = this.state; // eslint-disable-line
     return (
       <div className={styles.main}>
         <Login defaultActiveKey={type} onTabChange={this.onTabChange} onSubmit={this.handleSubmit}>

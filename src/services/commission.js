@@ -9,7 +9,7 @@ export async function queryPlan(params) {
 
     // parameter spell issue
     if (params.planType) {
-        params.planPype = params.planType;
+        params.enabledFlag = params.planState;
         // delete params.planType;
     }
     Object.keys(params).forEach((key) => {
