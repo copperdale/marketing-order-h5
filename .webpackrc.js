@@ -24,6 +24,6 @@ export default {
     javascriptEnabled: true,
   },
   disableDynamicImport: true,
-  publicPath: '/meiye/',
+  publicPath: '/meiye/dist/',
   hash: true,
 };
