@@ -12,6 +12,9 @@ export async function queryPlan(params) {
         params.planPype = params.planType;
         // delete params.planType;
     }
+    Object.keys(params).forEach((key) => {
+        params[key] = params[key].trim ? params[key].trim() : params[key];
+    });
     return request(`${prefix}MeiYe/public/api/talentPlan/getTalentPage?token=${getToken()}`, {
         method: 'POST',
         body: params,

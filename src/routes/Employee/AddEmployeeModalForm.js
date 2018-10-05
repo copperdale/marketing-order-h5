@@ -104,7 +104,7 @@ class BasicForm extends React.Component {
         <FormItem
           {...formItemLayout}
           label={
-            <span className="section-title">角色权限</span>
+            <span className="section-title-without-float">角色权限</span>
           }
         />
         <FormItem
@@ -124,7 +124,7 @@ class BasicForm extends React.Component {
         >
          
           <Row>
-            <Col span={20} offset={2}>
+            <Col span={16} offset={6}>
               {this.getPermissionCheckBoxes(1)}
             </Col>
           </Row>
@@ -143,7 +143,7 @@ class BasicForm extends React.Component {
           label="POS前端操作权限"
         >
           <Row>
-            <Col span={20} offset={2}>
+            <Col span={16} offset={6}>
               {this.getPermissionCheckBoxes(2)}
             </Col>
           </Row>

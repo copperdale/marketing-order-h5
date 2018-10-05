@@ -38,3 +38,9 @@ export async function getEmployees(params) {
         body: params,
     });
 }
+
+export async function deleteEmployee(id) {
+    return request(`${prefix}MeiYe/public/api/role/authUser/delete/${id}`, {
+        method: 'GET',
+    });
+}

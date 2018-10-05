@@ -6,6 +6,7 @@ import {
   addEmployeeRole, 
   updateEmployeeRole, 
   getEmployees,
+  deleteEmployee,
 } from '../services/employee';
 
 export default {
@@ -110,6 +111,12 @@ export default {
       yield call(deleteEmployeeRoles, id);
       yield put({
         type: 'employee/getEmployeeRoles',
+      });
+    },
+    *deleteEmployee({ payload: { id } }, { call, put }) {
+      yield call(deleteEmployee, id);
+      yield put({
+        type: 'employee/queryEmployee',
       });
     },
     *addProductType(_, { call, put, select }) {

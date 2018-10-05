@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Divider } from 'antd';
+import { Table, Divider, Popconfirm } from 'antd';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 
@@ -7,6 +7,9 @@ import { Link } from 'dva/router';
   queryResult: state.product.queryResult,
 }))
 export default class SearchResult extends Component {
+  deleteProduct = (id) => {
+    alert('单品和套餐的删除接口未提供');
+  }
   render() {
     const columns = [{
       title: '品项名称',
@@ -55,13 +58,24 @@ export default class SearchResult extends Component {
           编辑
           </Link>
           <Divider type="vertical" />
-          <a className="primary-blue" href="javascript:;">删除</a>
+          <Popconfirm
+            title="确定要删除这条记录吗?"
+            onConfirm={() => { this.deleteProduct(record.id) }}
+            okText="删除"
+            cancelText="取消"
+          >
+            <a
+              className="primary-blue"
+              href="javascript:;"
+            >删除
+            </a>
+          </Popconfirm>
         </span>
       ),
     }];
 
     let data = this.props.queryResult;
-    data = data.concat(data).concat(data);
+    data = data;
     const pager = {
       pageSize: 10,
       showSizeChanger: true,
@@ -81,7 +95,7 @@ export default class SearchResult extends Component {
         columns={columns}
         dataSource={data}
         bordered
-        size="small"
+        // size="small"
         rowKey="id"
         pagination={pager}
       />

@@ -31,7 +31,9 @@ export async function queryProductTypes({ name, dishCode, type }) {
         body: {
             'pageNum':0,
             'pageSize':1000000,
-            name, dishCode, type
+            name: name.trim(),
+            dishCode: dishCode.trim(),
+            type: type.trim()
         }
     });
 }
