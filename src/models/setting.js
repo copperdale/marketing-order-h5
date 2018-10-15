@@ -163,7 +163,7 @@ export default {
     setup({ history, dispatch }) {
       // Subscribe history(url) change, trigger `load` action if pathname is `/`
       return history.listen(({ pathname, search }) => {
-        if (pathname === '/setting' || pathname === '/') {
+        if (pathname === '/setting/workspaceSetting') {
           dispatch({
             type: 'setting/getTableArea',
           });

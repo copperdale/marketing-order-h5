@@ -235,7 +235,7 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入登陆账号',
       dataIndex: 'account',
       rules: [{ required: true, message: '请输入登陆账号' }],
-      render: <Input size="small" maxLength={20} type="number" />,
+      render: <Input size="small" maxLength={20} />,
     }, {
       label: '登录密码',
       placeholder: '请输入登录密码',

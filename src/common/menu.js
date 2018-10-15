@@ -14,17 +14,17 @@ const menuData = [
   {
     name: '会员',
     icon: 'user',
-    path: 'user',
+    path: 'vipuser',
   },
   {
     name: '营销',
     icon: 'gift',
-    path: 'gift',
+    path: 'marketing',
   },
   {
     name: '报表',
     icon: 'area-chart',
-    path: 'area-chart',
+    path: 'report',
   },
   {
     name: '员工',
@@ -36,6 +36,20 @@ const menuData = [
     icon: 'setting',
     path: 'setting',
     // authority: 'guest',
+    children: [
+      {
+        name: '工作台设置',
+        path: 'workspaceSetting',
+      },
+      {
+        name: '会员设置',
+        path: 'customerSetting',
+      },
+      {
+        name: '门店设置',
+        path: 'commercialSetting',
+      },
+    ]
   },
   {
     name: '人效',

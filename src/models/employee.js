@@ -156,7 +156,7 @@ export default {
     setup({ history, dispatch }) {
       // Subscribe history(url) change, trigger `load` action if pathname is `/`
       return history.listen(({ pathname, search }) => {
-        if (pathname === '/employee' || pathname === '/product-new') {
+        if (pathname === '/employee' || pathname === '/employee-new') {
           dispatch({
             type: 'employee/getEmployeeRoles',
           });

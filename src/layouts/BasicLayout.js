@@ -220,7 +220,7 @@ export default class BasicLayout extends React.PureComponent {
     const baseRedirect = this.getBaseRedirect();
     console.log(baseRedirect);
     const layout = (
-      <Layout>
+      <Layout style={{ width: '100%', height: '100%' }}>
         <HeaderMenu
           logo={logo}
           // 不带Authorized参数的情况下如果没有权限,会强制跳到403界面

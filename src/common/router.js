@@ -95,8 +95,26 @@ export const getRouterData = app => {
     '/employee-new': {
       component: dynamicWrapper(app, ['employee', 'employee-new'], () => import('../routes/Employee/New/index.js')),
     },
-    '/setting': {
+    '/setting/commercialSetting': {
+      component: dynamicWrapper(app, ['commercialSetting'], () => import('../routes/CommercialSetting/index.js')),
+    },
+    '/setting/customerSetting': {
+      component: dynamicWrapper(app, ['customerSetting'], () => import('../routes/CustomerSetting/index.js')),
+    },
+    '/setting/workspaceSetting': {
       component: dynamicWrapper(app, ['setting'], () => import('../routes/Setting/index.js')),
+    },
+    '/home': {
+      component: dynamicWrapper(app, ['home'], () => import('../routes/Home/index.js')),
+    },
+    '/report': {
+      component: dynamicWrapper(app, ['report'], () => import('../routes/Report/index.js')),
+    },
+    '/marketing': {
+      component: dynamicWrapper(app, ['marketing'], () => import('../routes/Marketing/index.js')),
+    },
+    '/vipuser': {
+      component: dynamicWrapper(app, ['vipuser'], () => import('../routes/Vipuser/index.js')),
     },
     '/commission': {
       component: dynamicWrapper(app, ['commission'], () => import('../routes/Commission/index.js')),

@@ -31,8 +31,8 @@ export async function getAllPermission() {
 }
 
 export async function getEmployees(params) {
-    params.pageNum = 0;
-    params.pageSize = 100000;
+    params.pageNum = 0; // eslint-disable-line
+    params.pageSize = 100000; // eslint-disable-line
     return request(`${prefix}MeiYe/public/api/role/authUser/getUserPage?token=${getToken()}`, { 
         method: 'POST',
         body: params,

@@ -70,6 +70,8 @@ export default {
       const response = yield call(getEmployee, id);
       const currenctEmployee = newFormFieldsKeys.reduce((result, item) => {
         result[item] = { value: `${response.data[item]}` || '' };
+        result.password = '';
+        result.passwordNum = '';
         if (dateKeys.indexOf(item) > -1) {
           result[item] = { value: moment(new Date(response.data[item])) }
         }
