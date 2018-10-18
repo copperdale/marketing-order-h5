@@ -90,7 +90,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('name', {
             rules: [{ required: true, message: '请输入品项名称' }],
           })(
-            <Input size="small" disabled={this.props.isView} />
+            <Input disabled={this.props.isView} />
             )}
         </FormItem>
         <FormItem
@@ -100,7 +100,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('code', {
             rules: [{ required: true, message: '请输入品项编码' }],
           })(
-            <Input size="small" disabled={this.props.isView} />
+            <Input disabled={this.props.isView} />
             )}
         </FormItem>
         <FormItem
@@ -116,7 +116,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('price', {
             rules: [{ required: true, message: '请输入售卖价格' }],
           })(
-            <Input size="small" disabled={this.props.isView} />
+            <Input disabled={this.props.isView} />
             )}
         </FormItem>
         <FormItem
@@ -126,14 +126,14 @@ class BasicForm extends React.Component {
           {getFieldDecorator('amount', {
             // rules: [{ required: true, message: '请输入售卖价格' }],
           })(
-            <Input size="small" type="number" style={{width: '120px'}} disabled={this.props.isView} />
+            <Input type="number" style={{width: '120px'}} disabled={this.props.isView} />
             )}
           <span style={{ float: 'right' }}>
             单位&nbsp;
             {getFieldDecorator('unit', {
               // rules: [{ required: true, message: '请输入售卖价格' }],
             })(
-              <Input size="small" style={{width: '120px'}} disabled={this.props.isView} />
+              <Input style={{width: '120px'}} disabled={this.props.isView} />
               )}
           </span>
         </FormItem>
@@ -159,7 +159,7 @@ class BasicForm extends React.Component {
                   required
                 >
                   <Input 
-                    size="small" 
+                    
                     disabled={this.props.isView}
                     value={item.name}
                     onChange={(e) => {this.updateAddons(index, 'name', e.target.value)}}
@@ -172,7 +172,6 @@ class BasicForm extends React.Component {
                   required
                 >
                   <Input
-                    size="small"
                     disabled={this.props.isView}
                     value={item.price}
                     onChange={(e) => {this.updateAddons(index, 'price', e.target.value)}}

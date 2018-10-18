@@ -26,7 +26,7 @@ export const getFieldsConfig = (props = { }) => {
       placeholder: '请输入方案名称',
       dataIndex: 'planName',
       // rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" maxLength={20} />,
+      render:<Input maxLength={20} />,
     },{
       label: '方案类型',
       placeholder: '',
@@ -45,7 +45,7 @@ export const getFieldsConfig = (props = { }) => {
       dataIndex: 'talentRoleBoList',
       // rules: [{ required: true, message: '请输入工号' }],
       render:(
-        <Select size="small" style={{ width: '100%' }} mode="multiple">
+        <Select style={{ width: '100%' }} mode="multiple">
           <Option value="1">试用期</Option>
           <Option value="2">正式</Option>
           <Option value="3">外聘</Option>
@@ -60,7 +60,7 @@ export const getFieldsConfig = (props = { }) => {
       dataIndex: 'planMode',
       rules: [{ required: true, message: '请输入手机号' }],
       render: (
-        <Select size="small" style={{ width: '100%' }}>
+        <Select style={{ width: '100%' }}>
           <Option value="1">固定金额提成</Option>
           <Option value="2">消费比例提成</Option>
         </Select>
@@ -180,14 +180,13 @@ class BasicForm extends React.Component {
                   style={{ textAlign: 'right' }}
                 >
                   <Button
-                    size="small"
                     onClick={() => {
                       this.props.dispatch(routerRedux.push('/commission'))
                     }}
                   >取消
                   </Button>
                   &nbsp;
-                  <Button htmlType="submit" type="primary" size="small">保存</Button>
+                  <Button htmlType="submit" type="primary">保存</Button>
                 </FormItem>
               </Col>
             </Row>

@@ -17,7 +17,7 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入姓名',
       dataIndex: 'name',
       rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" />,
+      render:<Input />,
     },{
       label: '性别',
       placeholder: '',
@@ -39,20 +39,20 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请选择日期',
       dataIndex: 'birthday',
       // rules: [{ required: true, message: '请输入姓名' }], 
-      render:<DatePicker size="small" style={{ width: '100%' }} />,
+      render:<DatePicker style={{ width: '100%' }} />,
     },{
       label: '身份证号',
       placeholder: '请输入身份证号码',
       dataIndex: 'identityCard',
       // rules: [{ required: true, message: '请输入姓名' }], 
-      render:<Input size="small" maxLength={20} />,
+      render:<Input maxLength={20} />,
     },{
       label: '学历',
       placeholder: '',
       dataIndex: 'education',
       // rules: [{ required: true, message: '请输入姓名' }], 
       render: (
-        <Select size="small" style={{ width: '100%' }}>
+        <Select style={{ width: '100%' }}>
           <Option value="职高">职高</Option>
           <Option value="中专">中专</Option>
           <Option value="大专">大专</Option>
@@ -66,20 +66,20 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入毕业学校',
       dataIndex: 'graduateSchool',
       // rules: [{ required: true, message: '请输入姓名' }], 
-      render:<Input size="small" maxLength={40} />,
+      render:<Input maxLength={40} />,
     },{
       label: '参加工作时间',
       placeholder: '请选择日期',
       dataIndex: 'intoWorkDate',
       // rules: [{ required: true, message: '请输入姓名' }], 
-      render:<DatePicker size="small" style={{ width: '100%' }} />,
+      render:<DatePicker style={{ width: '100%' }} />,
     },{
       label: '婚姻状况',
       placeholder: '',
       dataIndex: 'isMarry',
       // rules: [{ required: true, message: '请输入姓名' }], 
       render: (
-        <Select size="small" style={{ width: '100%' }}>
+        <Select style={{ width: '100%' }}>
           <Option value="1">已婚</Option>
           <Option value="2">未婚</Option>
         </Select>
@@ -93,7 +93,7 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入员工工号',
       dataIndex: 'jobNumber',
       rules: [{ required: true, message: '请输入工号' }],
-      render:<Input size="small" maxLength={10} />,
+      render:<Input maxLength={10} />,
     },{
       label: ' ',
       placeholder: ' ',
@@ -106,7 +106,7 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       dataIndex: 'jobEmployeeType',
       rules: [{ required: true, message: '请输入员工类型' }], 
       render: (
-        <Select size="small" style={{ width: '100%' }}>
+        <Select style={{ width: '100%' }}>
           <Option value="1">试用期</Option>
           <Option value="2">正式</Option>
           <Option value="3">外聘</Option>
@@ -117,20 +117,20 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请选择日期',
       dataIndex: 'jobEntryTime',
       rules: [{ required: true, message: '请输入入职时间' }], 
-      render:<DatePicker size="small" style={{ width: '100%' }} />,
+      render:<DatePicker style={{ width: '100%' }} />,
     },{
       label: '转正时间',
       placeholder: '请选择日期',
       dataIndex: 'jobPositiveTime',
       // rules: [{ required: true, message: '请输入姓名' }], 
-      render:<DatePicker size="small" style={{ width: '100%' }} />,
+      render:<DatePicker style={{ width: '100%' }} />,
     },{
       label: '职位',
       placeholder: '',
       dataIndex: 'jobPosition',
       rules: [{ required: true, message: '请输入职位' }], 
       render: (
-        <Select size="small" style={{ width: '100%' }}>
+        <Select style={{ width: '100%' }}>
           {
             (props.EmployeeRoleList || []).map(role => {
               return (
@@ -145,13 +145,13 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入职级',
       dataIndex: 'jobGrade',
       // rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" maxLength={10} />,
+      render:<Input maxLength={10} />,
     },{
       label: '工作地点',
       placeholder: '请输入工作地点',
       dataIndex: 'jobAddress',
       // rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" maxLength={40} />,
+      render:<Input maxLength={40} />,
     }],
   },{
     sectionTitle: '联系方式',
@@ -160,25 +160,25 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入手机号',
       dataIndex: 'mobile',
       rules: [{ required: true, message: '请输入手机号' }],
-      render:<Input size="small" type='number' />,
+      render:<Input type='number' />,
     }, {
       label: '邮箱',
       placeholder: '请输入邮箱',
       dataIndex: 'email',
       // rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" maxLength={40} />,
+      render:<Input maxLength={40} />,
     }, {
       label: 'QQ',
       placeholder: '请输入QQ', 
       dataIndex: 'qQ',
       // rules: [{ required: true, message: '请输入QQ' }],
-      render:<Input size="small" maxLength={20} />,
+      render:<Input maxLength={20} />,
     }, {
       label: '现住址',
       placeholder: '请输入现住址',
       dataIndex: 'address',
       // rules: [{ required: true, message: '请输入QQ' }],
-      render:<Input size="small" maxLength={50} />,
+      render:<Input maxLength={50} />,
     }],
   },{
     sectionTitle: '薪资',
@@ -193,13 +193,13 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入基本工资',
       dataIndex: 'salaryBase',
       rules: [{ required: true, message: '请输入基本工资' }],
-      render:<Input size="small" maxLength={10} addonBefore="￥" />,
+      render:<Input maxLength={10} addonBefore="￥" />,
     }, {
       label: '岗位工资',
       placeholder: '请输入岗位工资',
       dataIndex: 'salaryPost',
       // rules: [{ required: true, message: '请输入岗位工资' }],
-      render:<Input size="small" maxLength={10} addonBefore="￥" />,
+      render:<Input maxLength={10} addonBefore="￥" />,
     }],
   },{
     sectionTitle: '紧急联系人',
@@ -208,25 +208,25 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入姓名',
       dataIndex: 'ecName',
       rules: [{ required: true, message: '请输入姓名' }],
-      render:<Input size="small" maxLength={10} />,
+      render:<Input maxLength={10} />,
     }, {
       label: '关系',
       placeholder: '请输入关系',
       dataIndex: 'ecRelation',
       rules: [{ required: true, message: '请输入关系' }],
-      render:<Input size="small" maxLength={10} />,
+      render:<Input maxLength={10} />,
     }, {
       label: '联系电话',
       placeholder: '请输入联系电话',
       dataIndex: 'ecMobile',
       rules: [{ required: true, message: '请输入联系电话' }],
-      render:<Input size="small" maxLength={20} type="number" />,
+      render:<Input maxLength={20} type="number" />,
     }, {
       label: '备用电话',
       placeholder: '请输入备用电话',
       dataIndex: 'ecMobileReserve',
       rules: [{ required: true, message: '请输入备用电话' }],
-      render:<Input size="small" maxLength={20} type="number" />,
+      render:<Input maxLength={20} type="number" />,
     }],
   },{
     sectionTitle: '登陆账号',
@@ -235,19 +235,19 @@ export const getFieldsConfig = (props = { latestEmployee: {} }) => {
       placeholder: '请输入登陆账号',
       dataIndex: 'account',
       rules: [{ required: true, message: '请输入登陆账号' }],
-      render: <Input size="small" maxLength={20} />,
+      render: <Input maxLength={20} type="number" />,
     }, {
       label: '登录密码',
       placeholder: '请输入登录密码',
       dataIndex: 'password',
       // rules: [{ validator: (val) => { return val.length === 6 && (/\d/gi).test(val) },  message: '只能输入数字，长度为6位数字' }],
-      render:<Input size="small" maxLength={6} />,
+      render:<Input maxLength={6} />,
     }, {
       label: '确认密码',
       placeholder: '请输入确认密码',
       dataIndex: 'passwordNum',
       // rules: [{ validator: (val) => { return val.length === 6 && (/\d/gi).test(val) },  message: '只能输入数字，长度为6位数字' }],
-      render:<Input size="small" maxLength={6} />,
+      render:<Input maxLength={6} />,
     }],
   }];
   return result;
@@ -360,14 +360,13 @@ class BasicForm extends React.Component {
                   style={{ textAlign: 'right' }}
                 >
                   <Button
-                    size="small"
                     onClick={() => {
                       this.props.dispatch(routerRedux.push('/employee'))
                     }}
                   >取消
                   </Button>
                   &nbsp;
-                  <Button htmlType="submit" type="primary" size="small">保存</Button>
+                  <Button htmlType="submit" type="primary">保存</Button>
                 </FormItem>
               </Col>
             </Row>

@@ -102,7 +102,7 @@ export default class SearchResult extends Component {
         columns={columns}
         dataSource={data}
         bordered
-        // size="small"
+        size="small"
         rowKey="id"
         pagination={pager}
       />

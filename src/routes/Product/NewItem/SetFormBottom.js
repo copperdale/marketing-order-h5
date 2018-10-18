@@ -68,18 +68,21 @@ export default class NewItem extends Component {
                 {
                   !this.props.isView
                   &&
-                  <Button
-                    size="small" 
-                    type="primary" 
-                    onClick={() => { 
-                      this.toggleShowSetFormBottomAddModal( {
-                        name: { value: '' }, 
-                        orderMin: { value: '' },
-                        orderMax: { value: '' }
-                      })
+                  (
+                    <Button
+                      type="primary"
+                      size="small"
+                      onClick={() => {
+                        this.toggleShowSetFormBottomAddModal({
+                          name: { value: '' },
+                          orderMin: { value: '' },
+                          orderMax: { value: '' },
+                        })
                       }
-                    }
-                  >创建子品项</Button>
+                      }
+                    >创建子品项
+                    </Button>
+                  )
                 }
               </div>
               <List

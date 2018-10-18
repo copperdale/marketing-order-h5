@@ -295,7 +295,6 @@ export default class NewItem extends Component {
                     :
                     (
                       <Input
-                        size="small"
                         style={{ width: '200px' }} 
                         value={area.areaName} 
                         onChange={(e) => {

@@ -38,7 +38,6 @@ export default class NewItem extends Component {
 
     let actionButtons = [
       <Button
-        size="small"
         style={{ float: 'right', marginLeft: '4px' }}
         onClick={() => { this.props.dispatch(routerRedux.push('/product')); }}
       >取消</Button>,

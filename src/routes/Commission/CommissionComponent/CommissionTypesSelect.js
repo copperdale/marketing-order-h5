@@ -5,7 +5,7 @@ export default class CommissionTypesSelect extends Component {
   
   render() {
     return (
-      <Select size="small" value={`${this.props.value}`} onChange={this.props.onChange} {...this.props}>
+      <Select value={`${this.props.value}`} onChange={this.props.onChange} {...this.props}>
         {
           this.props.needAll
           &&

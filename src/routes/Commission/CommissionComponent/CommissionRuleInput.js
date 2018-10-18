@@ -68,7 +68,7 @@ export default class CommissionTypesSelect extends Component {
   }
 
   handleChange  = (key, value, index) => {
-    let rules = this.state.ruleList;
+    const rules = this.state.ruleList;
     rules.forEach((item, cIndex) => {
       if (index === cIndex) {
         item[key] = value;
@@ -156,7 +156,6 @@ export default class CommissionTypesSelect extends Component {
                   <Input
                     key={`ruleValue${index * 2}`}
                     value={item.ruleValue}
-                    size="small"
                     onChange={(e) => {
                       this.handleChange('ruleValue', e.target.value, index);
                     }}
@@ -167,7 +166,6 @@ export default class CommissionTypesSelect extends Component {
                   <Input
                     value={item.ruleCommission}
                     key={`ruleCommission${index * 2}`}
-                    size="small"
                     onChange={(e) => {
                       this.handleChange('ruleCommission', e.target.value, index);
                     }}
@@ -181,7 +179,7 @@ export default class CommissionTypesSelect extends Component {
         }
         <Row key="action">
           <Col key="action" span={12}>
-            <Button size="small" onClick={this.addRules}>Add</Button>
+            <Button onClick={this.addRules}>Add</Button>
           </Col>
         </Row>
       </Fragment>

@@ -4,4 +4,5 @@ module.exports = {
   'card-actions-background': '#f5f8fa',
   'btn-danger-color': '#1890ff',
   'table-header-bg': 'rgba(232, 232, 232, 0.5)',
+  'input-height-base': '32px',
 };

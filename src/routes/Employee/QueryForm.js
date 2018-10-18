@@ -34,7 +34,7 @@ class BasicForm extends React.Component {
       },
     };
     return (
-      <Form onSubmit={this.handleSubmit} layout="inline">
+      <Form onSubmit={this.handleSubmit} layout="inline" style={{ marginBottom: '8px' }}>
         <FormItem
           {...formItemLayout}
           label="员工类型"
@@ -43,7 +43,7 @@ class BasicForm extends React.Component {
             // rules: [{ required: true, message: 'Please input your note!' }],
             initialValue: '1',
           })(
-            <Select size="small" style={{ width: '120px' }}>
+            <Select style={{ width: '120px' }}>
               <Option value="1">试用期</Option>
               <Option value="2">正式</Option>
               <Option value="3">外聘</Option>
@@ -57,7 +57,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('name', {
             // rules: [{ required: true, message: 'Please input your note!' }],
           })(
-            <Input size="small" style={{ width: '120px' }} />
+            <Input style={{ width: '120px' }} />
             )}
         </FormItem> */}
         <FormItem
@@ -67,11 +67,11 @@ class BasicForm extends React.Component {
           {getFieldDecorator('name', {
             // rules: [{ required: true, message: 'Please input your note!' }],
           })(
-            <Input size="small" style={{ width: '120px' }} />
+            <Input style={{ width: '120px' }} />
             )}
         </FormItem>
         <FormItem>
-          <Button size="small" type="primary" htmlType="submit">查询</Button>
+          <Button type="primary" htmlType="submit">查询</Button>
         </FormItem>
       </Form>
     );

@@ -17,7 +17,7 @@ const getIcon = icon => {
     if (icon.indexOf('http') === 0) {
       return <img src={icon} alt="icon" className={`${styles.icon} sider-menu-item-img`} />;
     }
-    return <Icon type={icon} />;
+    return <Icon className={`${styles.icon}`} type={icon} />;
   }
 
   return icon;

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Button } from 'antd';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';

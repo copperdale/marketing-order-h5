@@ -41,7 +41,7 @@ class BasicForm extends React.Component {
   }
 
   getPermissionCheckBoxes = (platform) => {
-    return this.props.permissions.filter(item => item.platform === platform).map((item, index) => {
+    return this.props.permissions.filter(item => item.platform === platform).map((item) => {
       return (
         // <Col span={20} offset={2}><Checkbox value={item.id}>{item.name}</Checkbox></Col>
         <Checkbox
@@ -50,7 +50,8 @@ class BasicForm extends React.Component {
           onChange={(e) => {
             const cPermissions = this.props.permissions;
             cPermissions.forEach((permission) => {
-              if (permission.id == item.id) {
+              if (`${permission.id}` === `${item.id}`) {
+                // eslint-disable-next-line
                 permission.checked = e.target.checked ? 1 : 0;
               }
             })
@@ -61,7 +62,8 @@ class BasicForm extends React.Component {
               },
             });
           }}
-        >{item.name}</Checkbox>
+        >{item.name}
+        </Checkbox>
       );
     });
   } 
@@ -88,7 +90,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('name', {
             // rules: [{ required: true, message: 'Please input your note!' }],
           })(
-            <Input size="small" style={{ width: '100%' }} />
+            <Input style={{ width: '100%' }} />
             )}
         </FormItem>
         <FormItem
@@ -98,7 +100,7 @@ class BasicForm extends React.Component {
           {getFieldDecorator('code', {
             // rules: [{ required: true, message: 'Please input your note!' }],
           })(
-            <Input size="small" style={{ width: '100%' }} />
+            <Input style={{ width: '100%' }} />
             )}
         </FormItem>
         <FormItem
