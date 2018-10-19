@@ -16,7 +16,7 @@ import NotFound from '../routes/Exception/404';
 import { getRoutes } from '../utils/utils';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const { Content, Footer } = Layout;
 const { AuthorizedRoute, check } = Authorized;
@@ -90,7 +90,6 @@ enquireScreen(b => {
 });
 
 @connect(({ user, global = {}, loading }) => ({
-  currentUser: user.currentUser,
   collapsed: global.collapsed,
   fetchingNotices: loading.effects['global/fetchNotices'],
   notices: global.notices,
@@ -162,7 +161,6 @@ export default class BasicLayout extends React.PureComponent {
       // get the first authorized route path in routerData
       const authorizedPath = Object.keys(routerData).find(
         item => {
-          console.log('###################');
           return check(routerData[item].authority, item) && item !== '/';
         }
       );
@@ -171,44 +169,12 @@ export default class BasicLayout extends React.PureComponent {
     return redirect;
   };
 
-  handleMenuCollapse = collapsed => {
+  logout = () => {
     const { dispatch } = this.props;
     dispatch({
-      type: 'global/changeLayoutCollapsed',
-      payload: collapsed,
+      type: 'login/logout',
     });
-  };
-
-  handleNoticeClear = type => {
-    message.success(`清空了${type}`);
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'global/clearNotices',
-      payload: type,
-    });
-  };
-
-  handleMenuClick = ({ key }) => {
-    const { dispatch } = this.props;
-    if (key === 'triggerError') {
-      dispatch(routerRedux.push('/exception/trigger'));
-      return;
-    }
-    if (key === 'logout') {
-      dispatch({
-        type: 'login/logout',
-      });
-    }
-  };
-
-  handleNoticeVisibleChange = visible => {
-    const { dispatch } = this.props;
-    if (visible) {
-      dispatch({
-        type: 'global/fetchNotices',
-      });
-    }
-  };
+  }
 
   render() {
     const {
@@ -231,22 +197,9 @@ export default class BasicLayout extends React.PureComponent {
           location={location}
           isMobile={mb}
           onCollapse={this.handleMenuCollapse}
+          onLogout={this.logout}
         />
         <Layout>
-          {/* <Header style={{ padding: 0 }}>
-            <GlobalHeader
-              logo={logo}
-              currentUser={currentUser}
-              fetchingNotices={fetchingNotices}
-              notices={notices}
-              collapsed={collapsed}
-              isMobile={mb}
-              onNoticeClear={this.handleNoticeClear}
-              onCollapse={this.handleMenuCollapse}
-              onMenuClick={this.handleMenuClick}
-              onNoticeVisibleChange={this.handleNoticeVisibleChange}
-            />
-          </Header> */}
           <Content style={{ margin: '24px 24px 0', height: '100%' }}>
             <Switch>
               {redirectData.map(item => (

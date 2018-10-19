@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Dropdown } from 'antd';
 import pathToRegexp from 'path-to-regexp';
 import { Link } from 'dva/router';
 import styles from './index.less';
@@ -210,7 +210,7 @@ export default class HeaderMenu extends PureComponent {
   };
 
   render() {
-    const { logo, menuData, collapsed, onCollapse } = this.props;
+    const { logo, menuData, collapsed, onCollapse, onLogout } = this.props;
     const { openKeys } = this.state;
     // Don't show popup menu when it is been collapsed
     const menuProps = collapsed
@@ -233,12 +233,11 @@ export default class HeaderMenu extends PureComponent {
         width={256}
         className={styles.sider}
       >
-        {/* <div className={styles.logo} key="logo">
+        <div className={styles.logo} key="logo">
           <Link to="/">
             <img src={logo} alt="logo" />
-            <h1>Ant Design Pro</h1>
           </Link>
-        </div> */}
+        </div>
         <Menu
           key="Menu"
           theme="dark"
@@ -246,10 +245,25 @@ export default class HeaderMenu extends PureComponent {
           {...menuProps}
           onOpenChange={this.handleOpenChange}
           selectedKeys={selectedKeys}
-          style={{ padding: '16px 0', width: '100%' }}
+          style={{ padding: '16px 0', width: '100%', marginLeft: '36px' }}
         >
           {this.getNavMenuItems(menuData)}
         </Menu>
+        <div className={styles.userinfo}>
+          <Dropdown overlay={
+            <Menu>
+              <Menu.Item>
+                <div onClick={ onLogout }>
+                  <Icon type="logout" theme="outlined" /> 退出登录
+                </div>
+              </Menu.Item>
+            </Menu>
+          }>
+            <span style={{ color: '#FFF', fontSize: '16px', lineHeight: '64px', height: '64px' }}>
+              <Icon type="user" theme="outlined" /> Admin
+            </span>
+          </Dropdown>
+        </div>
       </Header>
     );
   }

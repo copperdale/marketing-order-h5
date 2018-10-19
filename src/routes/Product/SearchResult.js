@@ -99,6 +99,7 @@ export default class SearchResult extends Component {
     };
     return (
       <Table
+        style={{ marginTop: '8px' }}
         columns={columns}
         dataSource={data}
         bordered

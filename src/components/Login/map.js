@@ -68,8 +68,10 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="mail" className={styles.prefixIcon} />,
+      // prefix: <Icon type="mail" className={styles.prefixIcon} />,
       placeholder: 'captcha',
+      verifyImage: '',
+      dispatch: () => { console.log('no dispatch'); },
     },
     rules: [
       {

@@ -6,6 +6,7 @@ import GlobalFooter from '../components/GlobalFooter';
 import styles from './UserLayout.less';
 import logo from '../assets/logo.svg';
 import { getRoutes, getPageQuery, getQueryPath } from '../utils/utils';
+import bgImage from '../assets/login-bg.png';
 
 // const copyright = (
 //   <Fragment>
@@ -37,7 +38,7 @@ class UserLayout extends React.PureComponent {
     console.log(routerData, match);
     return (
       <DocumentTitle title={this.getPageTitle()}>
-        <div className={styles.container}>
+        <div className={styles.container} style={{ backgroundImage: bgImage }}>
           <div className={styles['desc-left']} />
           <div className={styles.desc}>
             <div className={styles.qrcode}>扫一扫，关注官方微信</div>

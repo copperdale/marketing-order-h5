@@ -332,7 +332,6 @@ export default class NewItem extends Component {
                               ?
                               (
                                 <Input
-                                  size="small"
                                   value={table.tableName}
                                   onChange={(e) => {
                                     this.updateTableName(e.target.value, table);
@@ -395,7 +394,6 @@ export default class NewItem extends Component {
                           <Card
                             title={
                               <Input
-                                size="small"
                                 value={table.tableName}
                                 onChange={(e) => {
                                   this.updateTableName(e.target.value, table);
@@ -444,7 +442,6 @@ export default class NewItem extends Component {
                   tab={
                     (
                       <Input
-                        size="small"
                         style={{ width: '200px' }} 
                         value={area.areaName} 
                         onChange={(e) => {
@@ -453,7 +450,6 @@ export default class NewItem extends Component {
                         onPressEnter={(e) => { this.addArea(e.target.value); }}
                         addonAfter={
                           <Icon
-                            size="small"
                             type="rollback"
                             title="放弃当前操作"
                             theme="outlined"

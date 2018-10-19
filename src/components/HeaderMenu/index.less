@@ -2,26 +2,31 @@
 @ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
 .logo {
   height: 64px;
-  position: relative;
+  position: fixed;
   line-height: 64px;
-  padding-left: (@menu-collapsed-width - 32px) / 2;
+  width: 64px;
+  top: 0;
+  left: 12px;
   transition: all 0.3s;
-  background: #002140;
   overflow: hidden;
   img {
     display: inline-block;
     vertical-align: middle;
-    height: 32px;
+    height: 64px;
+    width: 64px;
   }
-  h1 {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 20px;
-    margin: 0 0 0 12px;
-    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-  }
+}
+
+.userinfo{
+  height: 64px;
+  position: fixed;
+  line-height: 64px;
+  // width: 64px;
+  text-align: right;
+  top: 0;
+  right: 12px;
+  transition: all 0.3s;
+  overflow: hidden;
 }
 
 .sider {

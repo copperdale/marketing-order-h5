@@ -17,6 +17,10 @@ export function setUserInfo(info) {
   return window.localStorage.setItem('userInfo', info);
 }
 
+export function removeUserInfo(info) {
+  return window.localStorage.removeItem('userInfo');
+}
+
 export function getToken() {
   // return window.localStorage.getItem('antd-pro-authority') || ['admin', 'user'];
   return window.localStorage.getItem('token');
@@ -24,4 +28,8 @@ export function getToken() {
 
 export function setToken(token) {
   return window.localStorage.setItem('token', token);
+}
+
+export function removeToken() {
+  return window.localStorage.removeItem('token');
 }
