@@ -10,7 +10,13 @@ export function setAuthority(authority) {
 
 export function getUserInfo() {
   // return window.localStorage.getItem('antd-pro-authority') || ['admin', 'user'];
-  return window.localStorage.getItem('userInfo');
+  const result = false;
+  try {
+    return JSON.parse(window.localStorage.getItem('userInfo'));
+  } catch (e) {
+    return result;
+  }
+  
 }
 
 export function setUserInfo(info) {

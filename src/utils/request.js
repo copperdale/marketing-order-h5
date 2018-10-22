@@ -85,6 +85,15 @@ export default function request(url, options) {
       }
       return response.json();
     })
+    .then((data) => {
+      if (data.messageType !== 'ignore') {
+        notification['error']({
+          message: '错误',
+          description: data.message
+        });
+      }
+      return data;
+    }) 
     .catch(e => {
       const { dispatch } = store;
       const status = e.name;
@@ -94,16 +103,23 @@ export default function request(url, options) {
         });
         return;
       }
-      if (status === 403) {
+      else if (status === 403) {
         dispatch(routerRedux.push('/exception/403'));
         return;
       }
-      if (status <= 504 && status >= 500) {
+      else if (status <= 504 && status >= 500) {
         dispatch(routerRedux.push('/exception/500'));
         return;
       }
-      if (status >= 404 && status < 422) {
+      else if (status >= 404 && status < 422) {
         dispatch(routerRedux.push('/exception/404'));
+        return;
+      }
+      else {
+        dispatch({
+          type: 'login/logout',
+        });
+        return;
       }
     });
 }

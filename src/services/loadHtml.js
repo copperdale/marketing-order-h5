@@ -1,6 +1,10 @@
 import request from '../utils/request';
 import { prefix } from './URL';
-import { getToken } from '../utils/authority';
+import { getToken, getUserInfo } from '../utils/authority';
+
+const getUserName = () => {
+	return getUserInfo() && getUserInfo().user.userName;
+}
 
 export async function getHomePage() {
   return request(`${prefix}MeiYe/public/api/thirdSys/redirect/index?token=${getToken()}`, { method: 'GET' });

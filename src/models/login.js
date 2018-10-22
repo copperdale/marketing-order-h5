@@ -18,16 +18,16 @@ export default {
   effects: {
     *login({ payload }, { call, put, select }) {
       const verifyCode = yield select(state => state.login.verifyCode);
-      if (verifyCode !== payload.verifyCode) {
-        notification.error({
-          message: '登录错误',
-          description: '请输入正确的验证码',
-        });
-        yield put({
-          type: 'login/getVerifyCode',
-        });
-        return;
-      }
+      // if (verifyCode !== payload.verifyCode) {
+      //   notification.error({
+      //     message: '登录错误',
+      //     description: '请输入正确的验证码',
+      //   });
+      //   yield put({
+      //     type: 'login/getVerifyCode',
+      //   });
+      //   return;
+      // }
       const response = yield call(login, payload);
       yield put({
         type: 'changeLoginStatus',
@@ -106,7 +106,17 @@ export default {
             type: 'login/getVerifyCode',
           });
         }
-      })
+
+        window.addEventListener('message',function(e){
+          if (e.data === 'logout') {
+            dispatch({
+              type: 'login/logout'
+            });
+          }
+        },false);
+
+      });
+
     }
   }
 };

@@ -43,7 +43,7 @@ export default class LoginPage extends Component {
     //     type,
     //   },
     // });
-    if (!err) {
+    if (true || !err) {
       dispatch({
         type: 'login/login',
         payload: {
@@ -70,7 +70,7 @@ export default class LoginPage extends Component {
     return (
       <div className={styles.main}>
         <Login defaultActiveKey={type} onTabChange={this.onTabChange} onSubmit={this.handleSubmit}>
-          <Shop name="shop" placeholder="请输入商户名称" />
+          <Shop name="storeId" placeholder="请输入商户名称" />
           <UserName name="userName" placeholder="请输入用户名" />
           <Password name="password" placeholder="请输入密码" />
           <Captcha

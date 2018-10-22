@@ -9,7 +9,8 @@ export default class IframeWrap extends Component {
           marginWidth="0"
           marginHeight="0"
           id={this.props.id}
-          srcDoc={this.props.srcDoc}
+          // srcDoc={this.props.srcDoc}
+          src={this.props.src}
           allowTransparency="true"
           scrolling="auto"
           title="title"
