@@ -43,7 +43,7 @@ export default class LoginPage extends Component {
     //     type,
     //   },
     // });
-    if (true || !err) {
+    if (!err) {
       dispatch({
         type: 'login/login',
         payload: {

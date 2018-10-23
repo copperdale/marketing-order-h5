@@ -176,6 +176,14 @@ export default class BasicLayout extends React.PureComponent {
     });
   }
 
+  handleMenuCollapse = collapsed => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'global/changeLayoutCollapsed',
+      payload: collapsed,
+    });
+  };
+
   render() {
     const {
       routerData,
@@ -184,7 +192,7 @@ export default class BasicLayout extends React.PureComponent {
     } = this.props;
     const { isMobile: mb } = this.state;
     const baseRedirect = this.getBaseRedirect();
-    console.log(baseRedirect);
+    // console.log(baseRedirect);
     const layout = (
       <Layout style={{ width: '100%', height: '100%' }}>
         <HeaderMenu
